@@ -18,6 +18,16 @@ public/          → assets estáticos
     images/
     fonts/
 
+## Server vs Client Components
+- Por defecto: Server Component
+- `"use client"` solo para: estado, efectos, event handlers, GSAP
+- Componentes con GSAP son siempre Client Components
+
+## Referencia de diseño
+- Antes de crear cualquier componente, leer `DESIGN.md`
+- No hardcodear colores, fuentes ni espaciados — usar los tokens de `tailwind.config.ts`
+- Si un componente no está en `DESIGN.md`, preguntar antes de inventar estilos
+
 ## Comandos
 - `npm run dev`       → servidor de desarrollo
 - `npm run build`     → build de producción

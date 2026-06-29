@@ -18,17 +18,16 @@ expresivos pero siempre claros y concisos. Y con un motion claro y smooth.
 - Sin números mágicos — usar constantes con nombre
 - Sin estilos inline — usar clases de Tailwind exclusivamente
 - Orden de clases Tailwind: layout → espaciado → tipografía → visual → animación
+- Imports absolutos con alias `@/` — nunca rutas relativas con `../`
 
 ## Principios de diseño
 - Artístico y moderno, pero siempre legible
 - El movimiento debe sentirse intencional, no decorativo
 - Mobile-first siempre
-- Soporte para modo oscuro por defecto
 
 ## Qué NO sugerir
 - Class Components
 - CSS Modules (usamos Tailwind)
-- Redux (usamos Zustand o Context)
 - Declaraciones con `var`
 - Librerías de animación que no sean GSAP
 
