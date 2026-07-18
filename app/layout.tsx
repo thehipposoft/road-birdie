@@ -3,6 +3,8 @@ import { EB_Garamond, DM_Sans, Inter } from "next/font/google";
 import { Footer } from "@/components/Footer";
 import { Menu } from "@/components/Menu";
 import "./globals.css";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { WhatsAppButton } from "@/components/WhatsAppButton";
 
 const displayFont = EB_Garamond({
   subsets: ["latin"],
@@ -38,9 +40,11 @@ export default function RootLayout({
       className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+          <SmoothScroll />
           <Menu />
           {children}
           <Footer />
+          <WhatsAppButton />
         </body>
     </html>
   );

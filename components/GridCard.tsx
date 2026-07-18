@@ -22,7 +22,7 @@ export const GridCard = ({ name, description, features, image }: GridCardProps) 
         {features.map((feature) => (
           <span
             key={feature}
-            className="px-3 py-1 font-ui text-xs text-main-black/70 border border-main-black/15 rounded-full"
+            className="px-3 py-1 font-ui text-xs text-main-black   bg-graybg rounded-full"
           >
             {feature}
           </span>

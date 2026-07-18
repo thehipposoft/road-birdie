@@ -1,47 +1,52 @@
 import Link from 'next/link'
 
-export type ButtonColor = 'main-yellow' | 'main-blue' | 'main-black' | 'main-navy' | 'white'
+export type ButtonColor = 'main-yellow' | 'main-blue' | 'main-black' | 'main-navy' | 'white' | 'noborder-white'
 
 const BG: Record<ButtonColor, string> = {
-  'main-yellow': 'bg-main-yellow',
-  'main-blue':   'bg-main-blue',
-  'main-black':  'bg-main-black',
-  'main-navy':   'bg-main-navy',
-  'white':       'bg-white',
+  'main-yellow':    'bg-main-yellow',
+  'main-blue':      'bg-main-blue',
+  'main-black':     'bg-main-black',
+  'main-navy':      'bg-main-navy',
+  'white':          'bg-white',
+  'noborder-white': 'bg-[#EDEDED]',
 }
 
 // Pseudo-elemento que sube desde abajo en hover
 const BEFORE_BG: Record<ButtonColor, string> = {
-  'main-yellow': 'before:bg-main-yellow',
-  'main-blue':   'before:bg-main-blue',
-  'main-black':  'before:bg-main-black',
-  'main-navy':   'before:bg-main-navy',
-  'white':       'before:bg-white',
+  'main-yellow':    'before:bg-main-yellow',
+  'main-blue':      'before:bg-main-blue',
+  'main-black':     'before:bg-main-black',
+  'main-navy':      'before:bg-main-navy',
+  'white':          'before:bg-white',
+  'noborder-white': 'before:bg-[#EDEDED]',
 }
 
 const TEXT: Record<ButtonColor, string> = {
-  'main-yellow': 'text-main-black',
-  'main-blue':   'text-white',
-  'main-black':  'text-white',
-  'main-navy':   'text-white',
-  'white':       'text-main-black',
+  'main-yellow':    'text-main-black',
+  'main-blue':      'text-white',
+  'main-black':     'text-white',
+  'main-navy':      'text-white',
+  'white':          'text-main-black',
+  'noborder-white': 'text-main-black',
 }
 
 const HOVER_TEXT: Record<ButtonColor, string> = {
-  'main-yellow': 'hover:text-main-black',
-  'main-blue':   'hover:text-white',
-  'main-black':  'hover:text-white',
-  'main-navy':   'hover:text-white',
-  'white':       'hover:text-main-black',
+  'main-yellow':    'hover:text-main-black',
+  'main-blue':      'hover:text-white',
+  'main-black':     'hover:text-white',
+  'main-navy':      'hover:text-white',
+  'white':          'hover:text-main-black',
+  'noborder-white': 'hover:text-main-black',
 }
 
 // Solo se aplica cuando color="white"
 const HOVER_BORDER: Record<ButtonColor, string> = {
-  'main-yellow': 'hover:border-main-yellow',
-  'main-blue':   'hover:border-main-blue',
-  'main-black':  'hover:border-main-black',
-  'main-navy':   'hover:border-main-navy',
-  'white':       'hover:border-white',
+  'main-yellow':    'hover:border-main-yellow',
+  'main-blue':      'hover:border-main-blue',
+  'main-black':     'hover:border-main-black',
+  'main-navy':      'hover:border-main-navy',
+  'white':          'hover:border-white',
+  'noborder-white': 'hover:border-[#EDEDED]',
 }
 
 interface ButtonProps {
@@ -50,12 +55,13 @@ interface ButtonProps {
   colorHover: ButtonColor
   href?: string
   arrow?: boolean
+  customClass?: string
 }
 
 const buildClassName = (color: ButtonColor, colorHover: ButtonColor) =>
   [
     'relative overflow-hidden inline-flex items-center justify-center',
-    'px-8 py-3.5 rounded-full cursor-pointer',
+    'px-6 py-3.5 rounded-full cursor-pointer',
     'font-ui text-sm font-medium',
     'transition-colors duration-300',
     BG[color],
@@ -70,8 +76,8 @@ const buildClassName = (color: ButtonColor, colorHover: ButtonColor) =>
     BEFORE_BG[colorHover],
   ].join(' ')
 
-export const Button = ({ texto, color, colorHover, href, arrow = false }: ButtonProps) => {
-  const className = buildClassName(color, colorHover)
+export const Button = ({ texto, color, colorHover, href, arrow = false, customClass }: ButtonProps) => {
+  const className = buildClassName(color, colorHover) + ` ${customClass}`
 
   const content = (
     <span className="relative z-10 flex items-center gap-2 ">

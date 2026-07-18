@@ -10,7 +10,10 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <Fleet />
+      <Fleet
+        titulo="The Road Birdie Fleet"
+        descripcion="Curated, fully-equipped vans designed to be your home away from home."
+      />
       <Features />
       <Testimonials />
       <Destinations />

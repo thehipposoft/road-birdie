@@ -1,5 +1,5 @@
-import Link from 'next/link'
 import Image from 'next/image'
+import { Button } from '@/components/Button'
 
 export const Hero = () => (
   <section className="flex-1 flex items-center rounded-4xl min-h-screen relative">
@@ -13,18 +13,8 @@ export const Hero = () => (
       </h1>
 
       <div className="mt-10 flex items-center justify-center gap-4">
-        <Link
-          href="/campers"
-          className="px-8 py-3 font-ui text-lg font-medium text-main-black bg-main-yellow rounded-full transition-opacity hover:opacity-80"
-        >
-          Explore Campers
-        </Link>
-        <Link
-          href="/destinations"
-          className="px-8 py-3 font-ui text-lg font-medium text-main-black bg-white rounded-full transition-opacity hover:opacity-80"
-        >
-          Recommended Destinations
-        </Link>
+        <Button texto="Explore Campers" color="main-yellow" colorHover="main-navy" href="/campers" />
+        <Button texto="Recommended Destinations" color="noborder-white" colorHover="main-navy" href="/destinations" />
       </div>
     </div>
   </section>

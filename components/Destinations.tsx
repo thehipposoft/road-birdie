@@ -1,17 +1,18 @@
+import Image from 'next/image'
 import Link from 'next/link'
 
 type Destination = {
   id: string
   name: string
-  color: string
+  image: string
   span: string
 }
 
 const DESTINATIONS: Destination[] = [
-  { id: 'whitsundays',  name: 'Whitsundays',             color: 'bg-main-blue/25',   span: 'col-span-2' },
-  { id: 'lake-argyle',  name: 'Lake Argyle Holiday Park', color: 'bg-main-navy/40',   span: 'col-span-1' },
-  { id: 'jervis-bay',   name: 'Jervis Bay',               color: 'bg-main-yellow/35', span: 'col-span-1' },
-  { id: 'broome',       name: 'Broome',                   color: 'bg-main-blue/20',   span: 'col-span-2' },
+  { id: 'whitsundays',  name: 'Whitsundays',             image: '/assets/images/destinations/whitsundays-1.webp', span: 'col-span-2' },
+  { id: 'lake-argyle',  name: 'Lake Argyle Holiday Park', image: '/assets/images/destinations/lake-1.png',         span: 'col-span-1' },
+  { id: 'jervis-bay',   name: 'Jervis Bay',               image: '/assets/images/destinations/jervis-bay-1.png',   span: 'col-span-1' },
+  { id: 'broome',       name: 'Broome',                   image: '/assets/images/destinations/broome-1.webp',      span: 'col-span-2' },
 ]
 
 export const Destinations = () => (
@@ -34,11 +35,12 @@ export const Destinations = () => (
       </div>
 
       <div className="mt-12 grid grid-cols-3 gap-4">
-        {DESTINATIONS.map(({ id, name, color, span }) => (
+        {DESTINATIONS.map(({ id, name, image, span }) => (
           <div
             key={id}
-            className={`${span} ${color} relative h-80 rounded-2xl overflow-hidden`}
+            className={`${span} relative h-88 rounded-2xl overflow-hidden`}
           >
+            <Image src={image} alt={name} fill className="object-cover" />
             <div className="absolute inset-0 bg-gradient-to-t from-black/55 to-transparent" />
             <div className="absolute bottom-6 left-6">
               <p className="font-ui text-xs font-medium uppercase tracking-widest text-white/60">

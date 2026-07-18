@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Button } from '@/components/Button'
 
 type FeatureItem = {
   id: string
@@ -102,12 +103,9 @@ export const Features = () => (
             ))}
           </div>
 
-          <Link
-            href="/campers"
-            className="self-center px-10 py-4 font-ui text-sm font-medium text-white bg-main-blue rounded-full transition-opacity hover:opacity-80"
-          >
-            Explore Campers
-          </Link>
+         <div className='text-center'>
+          <Button href='/campers' texto='Explore Campers' color='main-blue' colorHover='main-yellow' />
+         </div>
         </div>
 
       </div>

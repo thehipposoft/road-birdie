@@ -37,13 +37,16 @@ const CAMPERS: CamperData[] = [
   },
 ]
 
-export const Fleet = () => (
-  <section className=" py-20">
-    <div className="max-w-[1200px] mx-auto px-6">
-      <h2 className="font-display text-5xl text-main-black font-extrabold">The Road Birdie Fleet</h2>
-      <p className="mt-3 font-body text-base text-light-gray">
-        Curated, fully-equipped vans designed to be your home away from home.
-      </p>
+interface FleetProps {
+  titulo: string
+  descripcion: string
+}
+
+export const Fleet = ({ titulo, descripcion }: FleetProps) => (
+  <section className="py-20" id='campers'>
+    <div className="lg:max-w-300 mx-auto px-6">
+      <h2 className="font-display text-5xl text-main-black font-extrabold">{titulo}</h2>
+      <p className="mt-3 font-body text-base text-light-gray">{descripcion}</p>
 
       <div className="mt-12 grid grid-cols-3 gap-6">
         {CAMPERS.map((camper) => (
