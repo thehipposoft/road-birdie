@@ -1,4 +1,12 @@
+'use client'
+
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useRef } from 'react'
 import { GridCard } from '@/components/GridCard'
+
+gsap.registerPlugin(ScrollTrigger)
 
 type CamperData = {
   id: string
@@ -42,23 +50,56 @@ interface FleetProps {
   descripcion: string
 }
 
-export const Fleet = ({ titulo, descripcion }: FleetProps) => (
-  <section className="py-20" id='campers'>
-    <div className="lg:max-w-300 mx-auto px-6">
-      <h2 className="font-display text-5xl text-main-black font-extrabold">{titulo}</h2>
-      <p className="mt-3 font-body text-base text-light-gray">{descripcion}</p>
+const CARD_CLASS = 'fleet-card'
+const CARD_STAGGER = 0.15
+const CARD_DURATION = 0.6
+const CARD_SCROLL_START = 'top 85%'
 
-      <div className="mt-12 grid grid-cols-3 gap-6">
-        {CAMPERS.map((camper) => (
-          <GridCard
-            key={camper.id}
-            name={camper.name}
-            description={camper.description}
-            features={camper.features}
-            image={camper.image}
-          />
-        ))}
+export const Fleet = ({ titulo, descripcion }: FleetProps) => {
+  const gridRef = useRef<HTMLDivElement>(null)
+
+  useGSAP(
+    () => {
+      gsap.to(`.${CARD_CLASS}`, {
+        opacity: 1,
+        y: 0,
+        duration: CARD_DURATION,
+        stagger: CARD_STAGGER,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: gridRef.current,
+          start: CARD_SCROLL_START,
+        },
+      })
+    },
+    { scope: gridRef }
+  )
+
+  return (
+    <section className="py-20" id='campers'>
+      <div className="lg:max-w-300 mx-auto px-6">
+        <h2 className="font-display text-5xl text-main-black font-extrabold">{titulo}</h2>
+        <p className="mt-3 font-body text-base text-light-gray">{descripcion}</p>
+
+        <div
+          ref={gridRef}
+          className="mt-12 flex overflow-x-auto snap-x snap-mandatory gap-6 -mx-6 px-6 pb-2 lg:grid lg:grid-cols-3 lg:overflow-visible lg:snap-none lg:mx-0 lg:px-0 lg:pb-0"
+        >
+          {CAMPERS.map((camper) => (
+            <div
+              key={camper.id}
+              className={`${CARD_CLASS} flex shrink-0 w-[85%] snap-center opacity-0 translate-y-6 lg:w-auto lg:shrink`}
+            >
+              <GridCard
+                name={camper.name}
+                description={camper.description}
+                features={camper.features}
+                image={camper.image}
+              />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  </section>
-)
+    </section>
+  )
+}

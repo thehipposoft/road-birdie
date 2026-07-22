@@ -15,12 +15,12 @@ const FAQS: FaqItemData[] = [
     answer:
       'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.',
   },
-  { id: 'travel',   question: 'Can I travel anywhere in Australia?',        answer: '' },
-  { id: 'pickup',   question: 'Where can I pick up and return the camper?', answer: '' },
-  { id: 'roadside', question: 'Is roadside assistance included?',            answer: '' },
-  { id: 'pets',     question: 'Can I bring my pet?',                        answer: '' },
-  { id: 'period',   question: 'Is there a minimum rental period?',          answer: '' },
-  { id: 'why',      question: 'Why choose Road Birdie?',                    answer: '' },
+  { id: 'travel',   question: 'Can I travel anywhere in Australia?',        answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
+  { id: 'pickup',   question: 'Where can I pick up and return the camper?', answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
+  { id: 'roadside', question: 'Is roadside assistance included?',            answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
+  { id: 'pets',     question: 'Can I bring my pet?',                        answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
+  { id: 'period',   question: 'Is there a minimum rental period?',          answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
+  { id: 'why',      question: 'Why choose Road Birdie?',                    answer: 'Each Road Birdie camper comes fully equipped with bedding, kitchen essentials, camping gear, storage space, and everything you need for a comfortable road trip across Australia.' },
 ]
 
 interface FaqItemProps extends FaqItemData {
@@ -78,7 +78,7 @@ export const Faq = () => (
 
       <h2 className="font-display text-7xl text-main-yellow font-extrabold">FAQs</h2>
 
-      <div className="mt-12 grid grid-cols-2 gap-x-16">
+      <div className="mt-12 grid lg:grid-cols-2 gap-x-16">
         <div>
           {FAQS.slice(0, 3).map((faq, i) => (
             <FaqItem key={faq.id} {...faq} defaultOpen={i === 0} />

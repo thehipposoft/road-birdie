@@ -34,8 +34,10 @@ h1, h2, h3 {
   font-family: var(--font-display);
 }
 
-.custom-shape {
-  clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
-
+/* Solo aplica desde lg (1024px) — en mobile el layout es un stack simple, sin recorte diagonal */
+@media (min-width: 1024px) {
+  .custom-shape {
+    clip-path: polygon(0 0, 58% 0, 100% 100%, 0% 100%);
+  }
 }
 

@@ -34,7 +34,7 @@ export const GridCard = ({ name, description, features, image }: GridCardProps) 
           texto="View Details"
           color={'white'}
           colorHover={'main-blue'}
-          href="#"
+          href="/campers/pelican"
           arrow
         />
       </div>

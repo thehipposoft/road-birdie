@@ -43,3 +43,31 @@ export interface WordPressCamper {
   acf: WordPressCamperAcf
   gallery: WordPressCamperGalleryImage[]
 }
+
+export interface WordPressDestinationCharacteristics {
+  distance: string
+  duration: string
+  best_season: string
+  perfect_van: string
+  starting_from: string
+}
+
+// "portada" es el id del media destacado en WordPress
+export interface WordPressDestinationAcf {
+  portada: number
+  sub_title: string
+  characteristics: WordPressDestinationCharacteristics
+}
+
+export interface WordPressDestination {
+  id: number
+  slug: string
+  title: {
+    rendered: string
+  }
+  acf: WordPressDestinationAcf
+}
+
+export interface WordPressMedia {
+  source_url: string
+}

@@ -52,11 +52,11 @@ const FEATURES: FeatureItem[] = [
 
 export const Features = () => (
   <section className="w-full bg-white py-20">
-    <div className="max-w-[1200px] mx-auto px-6">
-      <div className="grid grid-cols-2 gap-12">
+    <div className="lg:max-w-[1200px] mx-auto px-6">
+      <div className="flex flex-col lg:grid lg:grid-cols-2 lg:grid-rows-1 gap-12">
 
         {/* Left: image card */}
-        <div className="relative rounded-t-3xl overflow-hidden lg:min-h-162.5">
+        <div className="relative rounded-t-3xl overflow-hidden lg:min-h-162.5 min-h-130">
           <Image src={"/assets/images/features.webp"} alt='' fill className='object-cover' />
           <div className="absolute inset-x-8 top-8">
             <h2 className="font-display font-bold text-5xl leading-tight text-main-black">

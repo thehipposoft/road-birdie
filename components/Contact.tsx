@@ -1,13 +1,13 @@
 import Link from "next/link";
 
 export const Contact = () => (
-  <section className="w-full flex flex-col items-center justify-center bg-main-blue/90 min-h-screen lg:gap-32">
+  <section className="w-full flex flex-col items-center justify-center bg-main-blue min-h-screen lg:gap-32 gap-20 px-10">
     <div className="relative bg-main-yellow h-1 w-full max-w-6xl" />
     <div className="flex flex-col items-center text-center gap-8">
 
       <p className="font-ui text-sm tracking-[0.4em] text-main-yellow">* * *</p>
 
-      <h2 className="font-display text-[90px] leading-none tracking-tighter text-main-yellow uppercase font-extrabold">
+      <h2 className="font-display lg:text-[90px] text-7xl leading-none tracking-tighter text-main-yellow uppercase font-extrabold">
         Connect<br/> With Us,
       </h2>
 

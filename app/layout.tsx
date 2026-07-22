@@ -37,14 +37,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-screen flex flex-col">
           <SmoothScroll />
           <Menu />
           {children}
           <Footer />
-          <WhatsAppButton />
         </body>
     </html>
   );
