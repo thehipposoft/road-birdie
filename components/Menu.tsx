@@ -58,7 +58,7 @@ export const Menu = () => {
 
           <Button
             texto='Contact Us'
-            href="/contact"
+            href="/#contact"
             color="main-blue"
             colorHover='main-navy'
             customClass='w-36'

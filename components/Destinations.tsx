@@ -34,7 +34,7 @@ export const Destinations = () => (
         </Link>
       </div>
 
-      <div className="lg:mt-12 mt-6 grid lg:grid-cols-3 grid-rows-3 gap-4">
+      <div className="lg:mt-12 mt-6 grid lg:grid-cols-3 grid-rows-3 lg:grid-rows-2 gap-4">
         {DESTINATIONS.map(({ id, name, image, span }) => (
           <Link
             href={`/destinations/whitsundays`}

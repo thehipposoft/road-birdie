@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 export const Contact = () => (
-  <section className="w-full flex flex-col items-center justify-center bg-main-blue min-h-screen lg:gap-32 gap-20 px-10">
+  <section className="w-full flex flex-col items-center justify-center bg-main-blue min-h-screen lg:gap-32 gap-20 px-10" id="contact">
     <div className="relative bg-main-yellow h-1 w-full max-w-6xl" />
     <div className="flex flex-col items-center text-center gap-8">
 

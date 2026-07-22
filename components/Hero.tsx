@@ -24,7 +24,7 @@ export const Hero = () => {
 
   return (
     <section className="flex-1 flex items-center rounded-4xl min-h-screen relative">
-      <Image src={"/assets/images/hero.webp"} fill alt='Road background' className='rounded-4xl relative -z-10 object-cover' />
+      <Image src={"/assets/images/hero.webp"} fill alt='Road background' className='rounded-4xl relative -z-10' />
       <div className='absolute w-full h-full bg-black/15'/>
       <div ref={heroRef} className="max-w-[1035px] mx-auto w-full px-6 relative z-10">
         <h1 className="font-display font-extrabold text-5xl sm:text-7xl md:text-8xl lg:text-[130px] leading-none text-white uppercase">
