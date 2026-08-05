@@ -5,6 +5,7 @@ import { Menu } from "@/components/Menu";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
+import GoogleAnalytics from "./GoogleAnalytics";
 
 const displayFont = EB_Garamond({
   subsets: ["latin"],
@@ -40,6 +41,7 @@ export default function RootLayout({
       className={`${displayFont.variable} ${uiFont.variable} ${bodyFont.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
+          <GoogleAnalytics />
           <SmoothScroll />
           <Menu />
           {children}
