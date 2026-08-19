@@ -5,7 +5,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "tan-sardine-149741.hostingersite.com",
+        hostname: "admin.roadbirdie.com.au",
         pathname: "/wp-content/uploads/**",
       },
     ],

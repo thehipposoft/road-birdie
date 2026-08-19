@@ -104,7 +104,7 @@ export const Features = () => (
           </div>
 
          <div className='text-center'>
-          <Button href='/campers' texto='Explore Campers' color='main-blue' colorHover='main-yellow' />
+          <Button href='#campers' texto='Explore Campers' color='main-blue' colorHover='main-yellow' />
          </div>
         </div>
 

@@ -1,6 +1,6 @@
 import type { WordPressMedia } from './types'
 
-const MEDIA_ENDPOINT = 'https://tan-sardine-149741.hostingersite.com/wp-json/wp/v2/media'
+const MEDIA_ENDPOINT = 'https://admin.roadbirdie.com.au/wp-json/wp/v2/media'
 
 export const getMediaUrl = async (id: number): Promise<string | null> => {
   const response = await fetch(`${MEDIA_ENDPOINT}/${id}`, { next: { revalidate: 3600 } })

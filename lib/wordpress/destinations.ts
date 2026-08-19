@@ -1,6 +1,6 @@
 import type { WordPressDestination } from './types'
 
-const DESTINATIONS_ENDPOINT = 'https://tan-sardine-149741.hostingersite.com/wp-json/wp/v2/destination'
+const DESTINATIONS_ENDPOINT = 'https://admin.roadbirdie.com.au/wp-json/wp/v2/destination'
 
 export const getDestinations = async (): Promise<WordPressDestination[]> => {
   const response = await fetch(DESTINATIONS_ENDPOINT, { next: { revalidate: 3600 } })
